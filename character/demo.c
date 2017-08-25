@@ -27,7 +27,7 @@ static struct cdev cdev_demo;
 /*
 文件打开函数, 上层对此设备调用open时会执行
 */
-int cdemo_open(struct inode *inode, struct file *filp)
+static int cdemo_open(struct inode *inode, struct file *filp)
 {
 	printk(KERN_NOTICE "======== cdevdemo_open ");
 	return 0;
@@ -36,7 +36,7 @@ int cdemo_open(struct inode *inode, struct file *filp)
 /*
 文件释放, 上层对此设备调用close时会执行
 */
-int cdemo_release(struct inode *inode, struct file *filp)
+static int cdemo_release(struct inode *inode, struct file *filp)
 {
 	printk(KERN_NOTICE "======== cdevdemo_release ");
 	return 0;
